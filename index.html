@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Barcode Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="controls-panel">
+            <h1 class="title">Barcode Generator</h1>
+            
+            <div class="input-group">
+                <label for="barcode-text">Text or Data</label>
+                <input type="text" id="barcode-text" placeholder="Enter data for barcode" value="Hello World">
+            </div>
 
+            <div class="input-group">
+                <label for="barcode-format">Format</label>
+                <select id="barcode-format">
+                    <option value="CODE128" selected>CODE128</option>
+                    <option value="CODE39">CODE39</option>
+                    <option value="EAN13">EAN-13</option>
+                    <option value="UPC">UPC</option>
+                    <option value="ITF14">ITF-14</option>
+                    <option value="MSI">MSI</option>
+                </select>
+            </div>
+
+            <div class="color-options">
+                <div class="input-group">
+                    <label for="line-color">Line Color</label>
+                    <input type="color" id="line-color" value="#000000">
+                </div>
+                <div class="input-group">
+                    <label for="background-color">Background</label>
+                    <input type="color" id="background-color" value="#FFFFFF">
+                </div>
+            </div>
+
+            <div class="slider-group">
+                <label for="bar-width">Bar Width: <span id="width-value">2</span></label>
+                <input type="range" id="bar-width" min="1" max="4" value="2" step="0.5">
+            </div>
+            
+            <div class="slider-group">
+                <label for="bar-height">Bar Height: <span id="height-value">100</span></label>
+                <input type="range" id="bar-height" min="20" max="200" value="100" step="10">
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="display-value" checked>
+                <label for="display-value">Show Text</label>
+            </div>
+        </div>
+
+        <div class="preview-panel">
+            <div class="barcode-display-wrapper">
+                <svg id="barcode-svg"></svg>
+            </div>
+            <p id="error-message"></p>
+            <div class="action-buttons">
+                <button id="download-btn"><i class='bx bxs-download'></i> Download</button>
+                <button id="copy-btn"><i class='bx bx-copy'></i> Copy</button>
+            </div>
+             <p class="copy-success">Copied to clipboard!</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
