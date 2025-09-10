@@ -1,2 +1,2 @@
 # Barcode-Generator
-Simple Barcode generator.
+Advance Barcode generator.
